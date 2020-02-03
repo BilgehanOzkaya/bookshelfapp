@@ -1,20 +1,29 @@
 package stukov.factory.bookshelfapp.domain;
 
-import org.springframework.data.annotation.Id;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-
+@Getter
+@Setter
 public class Book {
+    private String book_name, book_author, book_publisher, book_genre;
+    private int book_id, chapter_id;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    public Book(){
+    }
 
-    private String name;
-
-    private Integer numberOfPages;
-
-    private Integer numberOfChapter;
+    public Book(String book_name, String book_author, String book_publisher, String book_genre, int book_id, int chapter_id) {
+        this.book_name = book_name;
+        this.book_author = book_author;
+        this.book_publisher = book_publisher;
+        this.book_genre = book_genre;
+        this.book_id = book_id;
+        this.chapter_id = chapter_id;
+    }
 
 }
+
+
+
+
+
